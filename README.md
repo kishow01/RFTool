@@ -4,8 +4,12 @@
 1. Radio deviece (HackRF,...)
 2. GNU Radio
 3. gr-osmosdr
+<<<<<<< HEAD
 4. gr-foo
 5. gr-ieee802-11
+=======
+4. scapy
+>>>>>>> 9b2d21a5bcd512e8408aa132cdfa1678d123620e
 
 ### Usage
 #### constant_jammer
