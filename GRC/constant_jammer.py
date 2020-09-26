@@ -5,8 +5,9 @@
 # Title: Noise TX
 # Author: kishow
 # Description: owo
-# Generated: Thu Sep 24 12:41:24 2020
+# Generated: Sat Sep 26 01:33:51 2020
 ##################################################
+
 
 if __name__ == '__main__':
     import ctypes
@@ -46,22 +47,22 @@ class constant_jammer(grc_wxgui.top_block_gui):
         ##################################################
         # Blocks
         ##################################################
-        self.osmosdr_sink_0 = osmosdr.sink( args="numchan=" + str(1) + " " + "" )
+        self.osmosdr_sink_0 = osmosdr.sink( args="numchan=" + str(1) + " " + '' )
         self.osmosdr_sink_0.set_sample_rate(samp_rate_0)
         self.osmosdr_sink_0.set_center_freq(target_freq, 0)
         self.osmosdr_sink_0.set_freq_corr(0, 0)
         self.osmosdr_sink_0.set_gain(90, 0)
         self.osmosdr_sink_0.set_if_gain(90, 0)
-        self.osmosdr_sink_0.set_bb_gain(10, 0)
-        self.osmosdr_sink_0.set_antenna("", 0)
+        self.osmosdr_sink_0.set_bb_gain(90, 0)
+        self.osmosdr_sink_0.set_antenna('', 0)
         self.osmosdr_sink_0.set_bandwidth(20000000, 0)
-          
-        self.analog_fastnoise_source_x_0 = analog.fastnoise_source_c(analog.GR_GAUSSIAN, 1000, 0, 8192)
+
+        self.analog_noise_source_x_0 = analog.noise_source_c(analog.GR_GAUSSIAN, 1000000, 0)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_fastnoise_source_x_0, 0), (self.osmosdr_sink_0, 0))    
+        self.connect((self.analog_noise_source_x_0, 0), (self.osmosdr_sink_0, 0))
 
     def get_target_freq(self):
         return self.target_freq

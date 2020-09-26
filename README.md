@@ -4,29 +4,24 @@
 1. Radio deviece (HackRF,...)
 2. GNU Radio
 3. gr-osmosdr
+4. gr-foo
+5. gr-ieee802-11
 
 ### Usage
 #### constant_jammer
 ```sh
-$ python constant_jammer.py
+$ gnuradio-companion GRC/constant_Jammer.grc
 ```
 
-#### spectrum_reader
+#### wifi frame recorder
 ```sh
-$ python spectrum_reader.py
-```
-
-#### wifi frame receiver
-```sh
-$ python hackrf_wifi_receiver.py
+$ gnuradio-companion GRC/recorder.grc
 ```
 
 #### deceptive_jammer
-Using beacon_frame\_generator.py to generate fake beacon frame.
 ```sh
-$ python beacon_frame_generator.py
+$ gnuradio-companion GRC/Deceptive_Jammer.grc
 ```
-Using hackrf_frame\_emitter.py to emit wifi frame.
-```sh
-$ python hackrf_frame_emitter.py
-```
+
+### Troubleshooting
+In Deceptive_Jammer.grc and recorder.grc. File sink path and File source path need to be corrected.

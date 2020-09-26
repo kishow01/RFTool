@@ -50,12 +50,13 @@ raw_input("\nPress enter to start\n")
 #print("\nHexDump of frame:")
 #hexdump(frame)
 #raw_input("\nPress enter to start\n")
+
+f = open('beacon.txt', 'w')
+f.write(bytes(frame))
+f.close()
+
 """
 while True:
     sock.sendto(bytes(frame), ('127.0.0.1', 52001))
     print('sending beacon frame...')
 """
-f = open('tmp.txt', 'w')
-f.write(bytes(frame))
-f.close()
-
